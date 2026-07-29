@@ -1,7 +1,7 @@
 {
   "inputIndex": 2,
   "documentId": "unsupported-ubl",
-  "fileName": "unsupported-ubl.xml",
+  "fileName": "not_evaluated_unsupported_ubl.xml",
   "processingStatus": "FAILED",
   "conformanceStatus": "NOT_EVALUATED",
   "previewConformanceStatus": "NOT_EVALUATED",
@@ -78,7 +78,7 @@
   "sha256": null,
   "embeddedXmlSha256": null,
   "container": null,
-  "checkedAt": "2026-07-29T10:49:44.666072Z",
+  "checkedAt": "2026-07-29T11:23:36.244077Z",
   "reports": {},
   "error": {
     "code": "UNSUPPORTED_DOCUMENT",

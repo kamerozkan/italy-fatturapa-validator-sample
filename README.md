@@ -22,7 +22,7 @@ Run structural and deterministic content checks on FatturaPA XML before submissi
 | [`dataset_record.schema.json`](dataset_record.schema.json) | JSON Schema 2020-12 contract for one dataset row |
 | [`DATA_NOTICE.md`](DATA_NOTICE.md) | Provenance, privacy, artifact, and interpretation limits |
 
-All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0.0.2`, dataset `VwGNYgKd34KDOfiEM`, on 2026-07-29. The run evaluated two documents and billed exactly two `invoice-validated` events. The `NOT_EVALUATED` unsupported document was not billed.
+All three JSON rows came from successful Actor run `MLSoiCsq6GH3tmH6e`, build `0.0.3`, dataset `THxkHWYci1pA6wEy5`, on 2026-07-29. The run evaluated two documents and billed exactly two `invoice-validated` events. The `NOT_EVALUATED` unsupported document was not billed.
 
 ## Stable decision contract
 
@@ -44,7 +44,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
 {
   "inputIndex": 0,
   "documentId": "accepted-fpr12",
-  "fileName": "accepted-fpr12.xml",
+  "fileName": "accepted_fpr12.xml",
   "processingStatus": "SUCCEEDED",
   "conformanceStatus": "ACCEPTED",
   "previewConformanceStatus": "NOT_EVALUATED",
@@ -121,7 +121,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
   "sha256": "a08f1d2bc65d5658860ccf15c5308f89617c87b2e3a5671a550d6288f100b7a7",
   "embeddedXmlSha256": null,
   "container": null,
-  "checkedAt": "2026-07-29T10:49:44.442615Z",
+  "checkedAt": "2026-07-29T11:23:36.056764Z",
   "reports": {},
   "error": null
 }
@@ -138,7 +138,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
 {
   "inputIndex": 1,
   "documentId": "rejected-arithmetic",
-  "fileName": "rejected-arithmetic.xml",
+  "fileName": "rejected_arithmetic_fpr12.xml",
   "processingStatus": "SUCCEEDED",
   "conformanceStatus": "REJECTED",
   "previewConformanceStatus": "NOT_EVALUATED",
@@ -232,7 +232,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
   "sha256": "1fa834287d8a921c4ba1d80aa75bed47a5638ee0d46ba949997e97e600668463",
   "embeddedXmlSha256": null,
   "container": null,
-  "checkedAt": "2026-07-29T10:49:44.598107Z",
+  "checkedAt": "2026-07-29T11:23:36.180274Z",
   "reports": {},
   "error": null
 }
@@ -249,7 +249,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
 {
   "inputIndex": 2,
   "documentId": "unsupported-ubl",
-  "fileName": "unsupported-ubl.xml",
+  "fileName": "not_evaluated_unsupported_ubl.xml",
   "processingStatus": "FAILED",
   "conformanceStatus": "NOT_EVALUATED",
   "previewConformanceStatus": "NOT_EVALUATED",
@@ -326,7 +326,7 @@ All three JSON rows came from successful Actor run `95PRKHFR5WAZGlx7n`, build `0
   "sha256": null,
   "embeddedXmlSha256": null,
   "container": null,
-  "checkedAt": "2026-07-29T10:49:44.666072Z",
+  "checkedAt": "2026-07-29T11:23:36.244077Z",
   "reports": {},
   "error": {
     "code": "UNSUPPORTED_DOCUMENT",
@@ -344,4 +344,3 @@ Use the [live Apify Actor](https://apify.com/kamerozkan/italy-fatturapa-validato
 ## Scope and licensing
 
 This independent sample repository is not affiliated with or endorsed by Agenzia delle Entrate, Sogei, or Sistema di Interscambio. The MIT License covers only this repository's original documentation, output samples, and JSON Schema. See [`DATA_NOTICE.md`](DATA_NOTICE.md) for the artifact and data boundary.
-

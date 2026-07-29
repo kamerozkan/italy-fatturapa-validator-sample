@@ -1,7 +1,7 @@
 {
   "inputIndex": 1,
   "documentId": "rejected-arithmetic",
-  "fileName": "rejected-arithmetic.xml",
+  "fileName": "rejected_arithmetic_fpr12.xml",
   "processingStatus": "SUCCEEDED",
   "conformanceStatus": "REJECTED",
   "previewConformanceStatus": "NOT_EVALUATED",
@@ -95,7 +95,7 @@
   "sha256": "1fa834287d8a921c4ba1d80aa75bed47a5638ee0d46ba949997e97e600668463",
   "embeddedXmlSha256": null,
   "container": null,
-  "checkedAt": "2026-07-29T10:49:44.598107Z",
+  "checkedAt": "2026-07-29T11:23:36.180274Z",
   "reports": {},
   "error": null
 }

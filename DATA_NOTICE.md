@@ -12,9 +12,9 @@ This is an independent, unofficial product. It is not affiliated with, sponsored
 |---|---|
 | Actor | `kamerozkan/italy-fatturapa-validator` |
 | Actor ID | `wGcRt736F8h1gEuqL` |
-| Successful run | `95PRKHFR5WAZGlx7n` |
-| Build | `0.0.2`, build ID `BRX5nIlR1onFJjVS3` |
-| Dataset | `VwGNYgKd34KDOfiEM`, 3 records |
+| Successful run | `MLSoiCsq6GH3tmH6e` |
+| Build | `0.0.3`, build ID `wppPBecGv7xa30kAT` |
+| Dataset | `THxkHWYci1pA6wEy5`, 3 records |
 | Run time | 2026-07-29 |
 | Charged validation events | 2 |
 
