@@ -1,0 +1,443 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/kamerozkan/italy-fatturapa-validator-sample/main/dataset_record.schema.json",
+  "title": "Italy FatturaPA validation dataset record",
+  "description": "One deterministic Italy FatturaPA offline-preflight result.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "inputIndex": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "documentId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "fileName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "processingStatus": {
+      "type": "string",
+      "enum": [
+        "SUCCEEDED",
+        "FAILED"
+      ]
+    },
+    "conformanceStatus": {
+      "type": "string",
+      "enum": [
+        "ACCEPTED",
+        "REJECTED",
+        "NOT_EVALUATED"
+      ]
+    },
+    "previewConformanceStatus": {
+      "type": "string",
+      "enum": [
+        "ACCEPTED",
+        "REJECTED",
+        "NOT_EVALUATED"
+      ]
+    },
+    "validationScope": {
+      "const": "OFFLINE_PREFLIGHT"
+    },
+    "externalStateStatus": {
+      "const": "NOT_EVALUATED_EXTERNAL_STATE"
+    },
+    "rulesetEffectiveAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "sourceFormat": {
+      "type": "string",
+      "enum": [
+        "XML",
+        "UNKNOWN"
+      ]
+    },
+    "validationFamily": {
+      "type": "string",
+      "enum": [
+        "ITALY_FATTURAPA",
+        "UNKNOWN"
+      ]
+    },
+    "syntax": {
+      "type": "string",
+      "enum": [
+        "FATTURAPA_XML",
+        "UNKNOWN"
+      ]
+    },
+    "profile": {
+      "type": "string",
+      "enum": [
+        "FPA12",
+        "FPR12",
+        "FSM10",
+        "UNKNOWN"
+      ]
+    },
+    "scenario": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "versions": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "validationScope",
+        "schemaSource",
+        "officialArtifactsBundled",
+        "ordinarySchema",
+        "simplifiedSchema",
+        "xmlDsigSchemaSha256",
+        "deterministicChecksRevision",
+        "activeRuleset",
+        "artifactManifestSha256"
+      ],
+      "properties": {
+        "validationScope": {
+          "const": "OFFLINE_PREFLIGHT"
+        },
+        "schemaSource": {
+          "const": "OPEN_SOURCE_DERIVED"
+        },
+        "officialArtifactsBundled": {
+          "const": false
+        },
+        "ordinarySchema": {
+          "$ref": "#/$defs/schemaArtifact"
+        },
+        "simplifiedSchema": {
+          "$ref": "#/$defs/schemaArtifact"
+        },
+        "xmlDsigSchemaSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "deterministicChecksRevision": {
+          "type": "string",
+          "format": "date"
+        },
+        "activeRuleset": {
+          "$ref": "#/$defs/rulesetIdentity"
+        },
+        "artifactManifestSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "counts": {
+      "$ref": "#/$defs/counts"
+    },
+    "findings": {
+      "$ref": "#/$defs/findings"
+    },
+    "findingsTruncated": {
+      "type": "boolean"
+    },
+    "previewCounts": {
+      "$ref": "#/$defs/counts"
+    },
+    "previewFindings": {
+      "$ref": "#/$defs/findings"
+    },
+    "previewFindingsTruncated": {
+      "type": "boolean"
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "embeddedXmlSha256": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "container": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "checkedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reports": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/error"
+        }
+      ]
+    }
+  },
+  "required": [
+    "inputIndex",
+    "documentId",
+    "fileName",
+    "processingStatus",
+    "conformanceStatus",
+    "previewConformanceStatus",
+    "validationScope",
+    "externalStateStatus",
+    "rulesetEffectiveAt",
+    "sourceFormat",
+    "validationFamily",
+    "syntax",
+    "profile",
+    "scenario",
+    "versions",
+    "counts",
+    "findings",
+    "findingsTruncated",
+    "previewCounts",
+    "previewFindings",
+    "previewFindingsTruncated",
+    "sha256",
+    "embeddedXmlSha256",
+    "container",
+    "checkedAt",
+    "reports",
+    "error"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "conformanceStatus": {
+            "enum": [
+              "ACCEPTED",
+              "REJECTED"
+            ]
+          }
+        },
+        "required": [
+          "conformanceStatus"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processingStatus": {
+            "const": "SUCCEEDED"
+          },
+          "sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "error": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "conformanceStatus": {
+            "const": "NOT_EVALUATED"
+          }
+        },
+        "required": [
+          "conformanceStatus"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processingStatus": {
+            "const": "FAILED"
+          },
+          "error": {
+            "$ref": "#/$defs/error"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fatal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "error": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warning": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "information": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "fatal",
+        "error",
+        "warning",
+        "information"
+      ]
+    },
+    "schemaArtifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "version",
+        "sha256",
+        "baselineProject",
+        "baselineVersion",
+        "baselineCommit",
+        "baselineSha256",
+        "license"
+      ],
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "baselineProject": {
+          "type": "string"
+        },
+        "baselineVersion": {
+          "type": "string"
+        },
+        "baselineCommit": {
+          "type": "string"
+        },
+        "baselineSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "license": {
+          "type": "string"
+        }
+      }
+    },
+    "rulesetIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "effectiveAt"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": [
+              "FATAL",
+              "ERROR",
+              "WARNING",
+              "INFORMATION"
+            ]
+          },
+          "stage": {
+            "type": "string"
+          },
+          "ruleId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "test": {
+            "type": "string"
+          },
+          "ruleset": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "column": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "severity",
+          "message"
+        ]
+      }
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
