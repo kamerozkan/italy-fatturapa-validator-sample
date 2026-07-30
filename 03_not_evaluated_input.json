@@ -1,0 +1,13 @@
+{
+  "documents": [
+    {
+      "documentId": "unsupported-ubl",
+      "fileName": "not_evaluated_unsupported_ubl.xml",
+      "url": "https://raw.githubusercontent.com/kamerozkan/italy-fatturapa-validator-sample/main/fixtures/not_evaluated_unsupported_ubl.xml"
+    }
+  ],
+  "resultDetail": "FINDINGS",
+  "maxFindingsPerDocument": 100,
+  "storeXmlReport": false,
+  "storeHtmlReport": false
+}
