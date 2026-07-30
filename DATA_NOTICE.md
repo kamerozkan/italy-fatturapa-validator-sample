@@ -14,6 +14,7 @@ This is an independent, unofficial product. It is not affiliated with, sponsored
 | Actor ID | `wGcRt736F8h1gEuqL` |
 | Successful run | `MLSoiCsq6GH3tmH6e` |
 | Build | `0.0.3`, build ID `wppPBecGv7xa30kAT` |
+| Latest hosted build | `0.0.5`, status `SUCCEEDED`, checked 2026-07-30 |
 | Dataset | `THxkHWYci1pA6wEy5`, 3 records |
 | Run time | 2026-07-29 |
 | Charged validation events | 2 |
@@ -27,6 +28,14 @@ The run and dataset identifiers are included for owner-side provenance. This rep
 - [`03_live_not_evaluated_output.json`](03_live_not_evaluated_output.json) is the verbatim unsupported-syntax dataset row.
 
 The records were generated from synthetic release-test inputs. No omitted value was inferred, reconstructed, or converted into a success claim.
+
+## Runnable input provenance
+
+- [`01_accepted_input.json`](01_accepted_input.json) references the committed `accepted_fpr12.xml` fixture; SHA-256 `a08f1d2bc65d5658860ccf15c5308f89617c87b2e3a5671a550d6288f100b7a7`.
+- [`02_rejected_input.json`](02_rejected_input.json) references the committed `rejected_arithmetic_fpr12.xml` fixture; SHA-256 `1fa834287d8a921c4ba1d80aa75bed47a5638ee0d46ba949997e97e600668463`.
+- [`03_not_evaluated_input.json`](03_not_evaluated_input.json) references the committed unsupported UBL fixture used to demonstrate the syntax boundary.
+
+The first two digests match their corresponding real output rows. The linked input files become runnable from their raw GitHub URLs when this repository refresh is published.
 
 ## Artifact boundary
 
