@@ -1,0 +1,13 @@
+{
+  "documents": [
+    {
+      "documentId": "rejected-arithmetic",
+      "fileName": "rejected_arithmetic_fpr12.xml",
+      "url": "https://raw.githubusercontent.com/kamerozkan/italy-fatturapa-validator-sample/main/fixtures/rejected_arithmetic_fpr12.xml"
+    }
+  ],
+  "resultDetail": "FINDINGS",
+  "maxFindingsPerDocument": 100,
+  "storeXmlReport": false,
+  "storeHtmlReport": false
+}
