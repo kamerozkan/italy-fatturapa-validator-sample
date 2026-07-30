@@ -1,0 +1,13 @@
+{
+  "documents": [
+    {
+      "documentId": "accepted-fpr12",
+      "fileName": "accepted_fpr12.xml",
+      "url": "https://raw.githubusercontent.com/kamerozkan/italy-fatturapa-validator-sample/main/fixtures/accepted_fpr12.xml"
+    }
+  ],
+  "resultDetail": "FINDINGS",
+  "maxFindingsPerDocument": 100,
+  "storeXmlReport": false,
+  "storeHtmlReport": false
+}
