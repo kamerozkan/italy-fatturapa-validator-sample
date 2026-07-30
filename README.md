@@ -5,6 +5,7 @@
 [![Apify Actor](https://img.shields.io/badge/Apify-Run%20Actor-00c7b7?logo=apify)](https://apify.com/kamerozkan/italy-fatturapa-validator)
 ![Profiles](https://img.shields.io/badge/FatturaPA-FPA12%20%7C%20FPR12%20%7C%20FSM10-005EA8)
 ![Validation](https://img.shields.io/badge/scope-OFFLINE__PREFLIGHT-137333)
+![Latest build](https://img.shields.io/badge/latest_build-0.0.5%20SUCCEEDED-2f855a)
 ![Samples](https://img.shields.io/badge/samples-3%20verified%20live%20rows-2f855a)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
@@ -16,6 +17,9 @@ Run structural and deterministic content checks on FatturaPA XML before submissi
 
 | File | Meaning |
 |---|---|
+| [`01_accepted_input.json`](01_accepted_input.json) | Runnable input for the accepted FPR12 fixture |
+| [`02_rejected_input.json`](02_rejected_input.json) | Runnable input for the rejected arithmetic fixture |
+| [`03_not_evaluated_input.json`](03_not_evaluated_input.json) | Runnable input for the unsupported UBL boundary |
 | [`01_live_accepted_output.json`](01_live_accepted_output.json) | Real accepted FPR12 result |
 | [`02_live_rejected_output.json`](02_live_rejected_output.json) | Real rejected FPR12 result with arithmetic and VAT evidence |
 | [`03_live_not_evaluated_output.json`](03_live_not_evaluated_output.json) | Real unsupported-syntax result with no technical decision |
@@ -23,6 +27,8 @@ Run structural and deterministic content checks on FatturaPA XML before submissi
 | [`DATA_NOTICE.md`](DATA_NOTICE.md) | Provenance, privacy, artifact, and interpretation limits |
 
 All three JSON rows came from successful Actor run `MLSoiCsq6GH3tmH6e`, build `0.0.3`, dataset `THxkHWYci1pA6wEy5`, on 2026-07-29. The run evaluated two documents and billed exactly two `invoice-validated` events. The `NOT_EVALUATED` unsupported document was not billed.
+
+Latest hosted build `0.0.5` was verified `SUCCEEDED` on 2026-07-30. The three real rows remain attributed to build `0.0.3`. The committed fixtures for the evaluated rows match their output SHA-256 values exactly.
 
 ## Stable decision contract
 
@@ -344,3 +350,12 @@ Use the [live Apify Actor](https://apify.com/kamerozkan/italy-fatturapa-validato
 ## Scope and licensing
 
 This independent sample repository is not affiliated with or endorsed by Agenzia delle Entrate, Sogei, or Sistema di Interscambio. The MIT License covers only this repository's original documentation, output samples, and JSON Schema. See [`DATA_NOTICE.md`](DATA_NOTICE.md) for the artifact and data boundary.
+
+## E-Invoice Automation Suite
+
+This repository is part of a 16-product invoice automation family. Public Actor links are runnable Store listings. Private labels are release-state disclosures, not public availability claims.
+
+- Public validators: [`xrechnung-xml-batch-validator-api`](https://apify.com/kamerozkan/xrechnung-xml-batch-validator-api) ([`xrechnung-xml-batch-validator-api-sample`](https://github.com/kamerozkan/xrechnung-xml-batch-validator-api-sample)), [`france-einvoice-validator`](https://apify.com/kamerozkan/france-einvoice-validator) ([`france-einvoice-validator-sample`](https://github.com/kamerozkan/france-einvoice-validator-sample)), [`italy-fatturapa-validator`](https://apify.com/kamerozkan/italy-fatturapa-validator) ([`italy-fatturapa-validator-sample`](https://github.com/kamerozkan/italy-fatturapa-validator-sample)), [`peppol-bis-preflight-validator`](https://apify.com/kamerozkan/peppol-bis-preflight-validator) ([`peppol-bis-preflight-validator-sample`](https://github.com/kamerozkan/peppol-bis-preflight-validator-sample)), and [`poland-ksef-preflight-validator`](https://apify.com/kamerozkan/poland-ksef-preflight-validator) ([`poland-ksef-preflight-validator-sample`](https://github.com/kamerozkan/poland-ksef-preflight-validator-sample)).
+- Private validator preview: `romania-efactura-validator` ([`romania-efactura-validator-sample`](https://github.com/kamerozkan/romania-efactura-validator-sample)), private release preview with a successful hosted build.
+- Private generators with successful hosted builds: `xrechnung-invoice-generator` ([`xrechnung-invoice-generator-sample`](https://github.com/kamerozkan/xrechnung-invoice-generator-sample)), `peppol-ubl-invoice-generator` ([`peppol-ubl-invoice-generator-sample`](https://github.com/kamerozkan/peppol-ubl-invoice-generator-sample)), `zugferd-facturx-pdf-generator` ([`zugferd-facturx-pdf-generator-sample`](https://github.com/kamerozkan/zugferd-facturx-pdf-generator-sample)), `fatturapa-invoice-generator` ([`fatturapa-invoice-generator-sample`](https://github.com/kamerozkan/fatturapa-invoice-generator-sample)), and `ksef-fa-invoice-generator` ([`ksef-fa-invoice-generator-sample`](https://github.com/kamerozkan/ksef-fa-invoice-generator-sample)).
+- Parsers and converters: public [`zugferd-facturx-pdf-to-json`](https://apify.com/kamerozkan/zugferd-facturx-pdf-to-json) ([`zugferd-facturx-pdf-to-json-sample`](https://github.com/kamerozkan/zugferd-facturx-pdf-to-json-sample)); private release-ready `xrechnung-to-json-parser` ([`xrechnung-to-json-parser-sample`](https://github.com/kamerozkan/xrechnung-to-json-parser-sample)); private hosted-build-ready `peppol-ubl-to-json-parser` ([`peppol-ubl-to-json-parser-sample`](https://github.com/kamerozkan/peppol-ubl-to-json-parser-sample)), `zugferd-to-xrechnung-converter` ([`zugferd-to-xrechnung-converter-sample`](https://github.com/kamerozkan/zugferd-to-xrechnung-converter-sample)), and `ubl-cii-format-converter` ([`ubl-cii-format-converter-sample`](https://github.com/kamerozkan/ubl-cii-format-converter-sample)).
