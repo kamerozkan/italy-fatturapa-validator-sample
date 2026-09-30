@@ -1,0 +1,15 @@
+{
+  "id": "wGcRt736F8h1gEuqL",
+  "name": "italy-fatturapa-validator",
+  "title": "Italy FatturaPA Validator - SDI Preflight for FPA12, FPR12",
+  "description": "Offline structural and deterministic content preflight for FPA12, FPR12, and FSM10 XML with pinned derived schemas and structured findings. Italian e-invoicing preflight before SDI submission: catches technical errors that commonly cause an SDI scarto, without claiming SDI acceptance.",
+  "seoTitle": "FatturaPA XML Validator - Italy SdI Preflight API",
+  "seoDescription": "Validate Italy FatturaPA FPA12, FPR12 and FSM10 invoice XML offline with pinned schemas. Get structured batch technical findings before SdI submission.",
+  "isPublic": true,
+  "url": "https://apify.com/kamerozkan/italy-fatturapa-validator",
+  "checkedAt": "2026-09-30",
+  "changeScope": "listing metadata and sample documentation only",
+  "runtimeChanged": false,
+  "schemasChanged": false,
+  "examplesRegenerated": false
+}
